@@ -1,0 +1,158 @@
+\documentclass{article}
+
+% if you need to pass options to natbib, use, e.g.:
+%     \PassOptionsToPackage{numbers, compress}{natbib}
+% before loading neurips_2021
+
+% ready for submission
+% \usepackage[attention]{neurips_2021}
+
+% IMPORTANT: if you are submitting attention track, please add the attention option:
+% \usepackage[attention]{neurips_2021}
+
+% to compile a preprint version, e.g., for submission to arXiv, add add the
+% [preprint] option:
+%     \usepackage[preprint]{neurips_2021}
+
+% to compile a camera-ready version, add the [final] option, e.g.:
+\usepackage[final]{neurips_2021}
+
+% to avoid loading the natbib package, add option nonatbib:
+%    \usepackage[nonatbib]{neurips_2021}
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{xcolor}         % colors
+
+\usepackage[whole]{bxcjkjatype} % japanese
+
+\title{Thoughts on the Applicability of Machine Learning to Scientific Discovery and Possible Future Research Directions (Perspective)}
+
+% The \author macro works with any number of authors. There are two commands
+% used to separate the names and addresses of multiple authors: \And and \AND.
+%
+% Using \And between authors leaves it to LaTeX to determine where to break the
+% lines. Using \AND forces a line break at that point. So, if LaTeX puts 3 of 4
+% authors names on the first line, and the last on the second line, try using
+% \AND instead of \And before the third author name.
+
+\author{%
+  Shiro Takagi\thanks{https://t46.github.io/} \\
+  Independent Researcher\\
+  \texttt{takagi4646@gmail.com} \\
+  % examples of more authors
+  % \And
+  % Coauthor \\
+  % Affiliation \\
+  % Address \\
+  % \texttt{email} \\
+  % \AND
+  % Coauthor \\
+  % Affiliation \\
+  % Address \\
+  % \texttt{email} \\
+  % \And
+  % Coauthor \\
+  % Affiliation \\
+  % Address \\
+  % \texttt{email} \\
+  % \And
+  % Coauthor \\
+  % Affiliation \\
+  % Address \\
+  % \texttt{email} \\
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+ This is a short perspective paper discussing the potential use of machine learning for scientific discovery. Optimizing and streamlining the development of scientific knowledge is a critical issue for the future of humanity. In recent years, machine learning have begun to accelerate scientific progress. However, many of them have been about automation specific to individual scientific domains. In this paper, we emphasize the importance of discussing how to apply machine learning to more general scientific processes as well. We then briefly discuss some possible future research directions to automate scientific discovery by machine learning.
+\end{abstract}
+
+\section{Introduction}
+Science has contributed greatly to the progress of humankind. Our affluent lifestyles supported by information technology, various materials, and electricity are all based on science. Scientific advances will continue to bring us a deeper understanding of nature. And it will bring further possibilities to humans that are unthinkable today. Optimization and efficiency of scientific discovery is therefore a crucial issue for the future of humanity.
+
+Although science appears to adhere to a rigorously formulated method of knowledge production, the formulation of scientific practice is a very recent phenomenon in the history of science. For example, it is only since the 19th century that there has been active support for the hypothetico-deductive method, which is the basis of current science \cite{sankey2014}. On the contrary, the very nature of scientific practice is still changing \cite{hey2009fourth}. Indeed, we still do not know how the discovery of a good problem or hypothesis, which has supported human breakthroughs, is done, or how optimal intellectual production can be achieved \cite{scientificdiscovery}. There are many practices that remain in actual scientific practice that are more historically influenced than optimized for knowledge production. In this sense, the scientific process still leaves much room for optimization.
+
+The use of machine learning technology can be a key to optimize and improve the efficiency of science. While there have been pioneering attempts to automate scientific discovery using artificial intelligence for many years \cite{lindsay1993dendral,langley1987scientific,king2004functional}, recent developments in machine learning, especially deep learning, have greatly accelerated the automation of scientific discovery. For example, scientists have applied machine learning to protein structure prediction \cite{jumper2021highly,senior2020improved}, physical properties prediction \cite{ramprasad2017machine}, drug discovery \cite{vamathevan2019applications}, quantum many-body problem \cite{carleo2017solving}, cosmology and quantum computation \cite{carleo2019machine}, genetics \cite{libbrecht2015machine}, nuclear fusion \cite{degrave2022magnetic}, and many other scientific domains and achieved significant results.　In particular, in response to the recent COVID-19 pandemic, researchers in various fields have accelerated their efforts to apply machine learning techniques to scientific discoveries related to the COVID-19 \cite{shorten2021deep}.
+
+These studies have provided very important insights and have greatly advanced science. On the other hand, the application of machine learning to individual-specific scientific problems has been the main focus. As we move forward with automation/optimization of science, the scientific community as a whole should discuss more potential applications of machine learning to more general scientific methods that are not limited to disciplines. It is also necessary to deepen the discussion among researchers on how to improve current machine learning to optimize their research. This means aiming for artificial intelligence that can do science, rather than automate individual tasks　in science. This would achieve the qualitative and quantitative leaps in intellectual production that would be unprecedented.　
+
+Therefore, in this paper, I would like to offer a view on the applicability of machine learning to the scientific method more generally, and more specifically, what scientists should think about to realize artificial intelligence that can do science. In particular, we intend to discuss the gap between the current state of machine learning and the goals we should be aiming for and give some suggestions on the general direction we should be heading in.
+
+\section{Preliminary}
+\subsection{On Research}
+We see research as the activity of making the unknown known. Strictly speaking, what is unknown depends on the subject who perceives it. However, if it can be immediately connected to the known, then there is no point in doing research, so in most cases, some leap of faith is required to make the unknown known. Therefore, reasoning about the unknown is necessary, which corresponds to hypothesis generation. And, when the inference to the unknown undergoes some procedure and satisfies certain criteria, the validity of the inference is justified and it becomes known. In the empirical sciences, this justification is determined by hypothesis testing and Bayesian posterior probability; in mathematics, by repeated deductive operations that are consistent with the axiomatic system; in engineering, by confirmation of the assumed behavior; in history, by the existence of multiple strong historical sources, and so on. This rigor of justification is why science is science.
+
+Although we mentioned making the unknown known, strictly speaking, an event is not something that can be dichotomized into unknown or known. To be precise, the mainstream view is that verification is what produces a difference in the degree of belief in certainty that people have at a given point in time (Bayesian confirmation theory \cite{confirmation}). In other words, we may view research as an act of changing the degree of certainty (or reducing uncertainty) about an event.
+
+In addition, although we treated the unknown as a given above, in the actual practice of science, \textit{discovery of the unknown} itself is also an important research process. No matter how great a hypothesis you can come up with, it will not be very important research if the problem to be tackled is of little significance. For example, ``What would happen if I took a step now?'' and ``How to realize an artificial intelligence that can use language?'' are both unknowns, but the latter seems to be a much more important question for the scientific community and humanity.
+
+Although the substance of specific hypotheses and methods of verification will differ greatly from study to study, the general framework of discovering the unknown, inference about the unknown, and justifying the inference should remain largely the same. Therefore, the process of inference about the unknown, or plausible inference \cite{polya1954mathematics}, itself should remain the same, regardless of whether a human or a machine performs it. Of course, there can be a difference in whether each step is performed explicitly or implicitly. For example, when a machine learning model predicts a known directly from a given unknown, it looks different from the traditional explicit process of hypothesis-generating and testing. However, since the prediction is an evaluation criterion of validity, in this sense, direct prediction can be seen as an implicit inference and justification of the unknown. Since machine learning is the study of prediction and generalization, it is in principle possible for machine learning to do science.
+
+\subsection{On Scientific Discovery}
+In the philosophy of science, there is agreement that scientific discovery is impossible to formulate in a completely logical/formal way, while there is also a common understanding that it is possible to evaluate its goodness in some form \cite{nickles2014,scientificdiscovery}. Until the 20th century, the main debate has been about the scientific justification in the philosophy of science, but since the middle of the 20th century, a debate about scientific discovery has emerged \cite{scientificdiscovery}. For example, some consider discovery as abduction \cite{hanson1965patterns}, some consider it as a search problem (problem solving) \cite{simon1973does,simon1981scientific}, and some consider it as the result of social processes \cite{kuhn1970structure,lakatos1980methodology}, some consider it as that based on a certain strategy \cite{darden1991theory}, etc.\cite{scientificdiscovery}.
+
+Among these, many have emphasized the importance of search problems in the automation of scientific discovery through machine learning in recent years \cite{coley2020autonomous1,kitano2021nobel,bengio2022ml4sci,lavin2021simulation} Machine learning efficiency of search in science has been used in areas such as experimental design using Bayesian statistics \cite{chaloner1995bayesian,shahriari2015taking}. The idea is that multiple candidate hypotheses (or experimental conditions, etc.) are prepared in advance, and machine learning assists in determining the next efficient candidate solution to be explored. The recent claims mentioned above are not very different from these problem setups in terms of the main framework. On the other hand, recent claims seem to emphasize the importance of efficiently searching for as exhaustive and diverse solutions as possible \cite{kitano2021nobel,bengio2022ml4sci,bengio2021flow,lavin2021simulation}. This is because new and important discoveries are brought about by the search for solutions that have not been explored before. Since search itself has long been studied as an important topic in machine learning, especially reinforcement learning \cite{amin2021survey}, it is expected that these findings will further contribute to the efficiency of science.
+
+Another major attempt to automate scientific discovery is the use of data from published papers. The earliest seminal work dates back to the 1980s by Swason \cite{swanson1986fish}. Since then, there have been attempts to identify scientific discoveries and their key elements from the data of published papers \cite{fortunato2018science,agarwal2009can,donthu2021conduct}. In particular, in recent years, machine learning has been used to predict research trends and issues\cite{lahav2022search,hope2020scisight}, and automatically generate future work,\cite{wang2019paperrobot}.Research in natural language processing has developed rapidly since the advent of Transformer \cite{vaswani2017attention}, and research using large scale data and large scale models has been \cite{brown2020language,bommasani2021opportunities} achieving amazing results. Since the results of this research have been remarkable, we expect that research using scientific data for scientific discovery will develop further in the future.
+
+\section{Proposition}
+In this section, we will discuss what would be important in advancing the automation of scientific discovery regardless of a particular domain. First, we should promote the research on exploration issues, such as that described in the previous section. The exhaustive experimental conditions search does have brought about some scientific discoveries that won the Nobel Prize \cite{kitano2021nobel}. Since discovery inevitably involves some kind of search, in the end, research into machine learning that can do a better search will be essential to automate scientific discovery.
+
+On the other hand, narrowing down the myriad of possible hypotheses to a finite number of candidate hypotheses before the search is inevitable for hypotheses search. Furthermore, the way for coming up with candidate hypotheses and generating the representation of them \cite{bechtel1993discovering} is nontrivial but crucial. In other words, how to automate the stage before the search by machine learning is the key point. Nevertheless, discussion on how to automate this preliminary step seems to lack. Therefore, we propose that the machine learning research community should discuss research directions to proceed with this automation.
+
+\subsection{Analogy}
+\label{section:analogy}
+One of the key research directions to advance pre-search automation would be the realization of neural networks that can learn analogies. The analogy is the application of one known relationship to another by focusing on structural similarity \cite{analogy}. The analogy is important because formulating reasonable hypotheses needs to connect the structure of the target problem to a known structure. 
+
+The research community has long noted the importance of analogies \cite{analogy} to human cognition \cite{gentner1983structure,holyoak1984analogical} and specifically scientific discovery \cite{hesse1965models,thagard_1984,gentner1993shift,holyoak1996mental,dunbar1997scientists}. Analogies have enabled several scientific discoveries \cite{hofstadter2013surfaces}, such as Kepler's laws \cite{gentner2002analogy}. On the other hand, current machine learning models have yet to be able to make analogies fully \cite{mitchell2021abstraction}. Therefore, the development of machine learning models that can think analogically would be critical for automatic scientific discovery.
+ 
+Analogies are not substantially different from other types of pattern recognition, such as image recognition or language understanding, in that they are acquired inductively from data. The difference is that they require higher-order abstract, structural, and systematic correspondences rather than lower-order perceptual correspondences. Humans would have been unable to perform plausible inference without such abstraction and symbolization because of cognitive limitations \cite{feldman2016simplicity}. Analogies were therefore essential for humans to reason about the unknown.
+
+Analogies are necessary not only for humans but also for machines to do science. The reason is that one of the main goals of science is to understand the laws (rules) of nature, and the ability to learn highly abstract, systematic correspondences is essential for acquiring such knowledge generalizable to a wide range of tasks. Enabling neural networks to learn targeted patterns is a major problem \cite{arjovsky2020out,shen2021towards} because current neural networks are known to learn spurious correlations \cite{chakraborty2018adversarial,geirhos2020shortcut}. While neural networks, in principle, can make predictions directly from raw experimental data, they can easily get trapped in task-specific spurious correlations without care. In particular, one well-known method of hypothesis generation, abduction \cite{hanson1965patterns}, has more uncertainty for inference than induction, and the effects of spurious correlations can be more severe. Although machines need not make analogies the same as humans, the ability to retain higher-order abstract correspondences, learn systematic correspondences, and learn correspondences of structure would be vital for machines to make valid inferences about the unknown.
+
+Various studies have emerged that attempt to use machine learning to learn analogies and abstract relations \cite{reed2015deep,santoro2017simple,hill2018learning,barrett2018measuring,steenbrugge2018improving,van2019disentangled,zheng2019abstract,kim2020few,ushio2021bert}. Although some studies have reported that neural networks can learn abstract relations for some simple datasets, it is far from perfect analogical reasoning. In particular, to our best knowledge, few studies have applied machine learning to analogical reasoning in the scientific domain. Therefore, it is urgent to advance the research in this direction. For challenges that machine learning faces concerning analogies in general, see, for example, this paper \cite{mitchell2021abstraction}.
+
+What seems to be the leading driver in advancing the acquisition of analogous capabilities specific to the scientific domain is the creation of datasets and the development of tasks. A reason that neural networks were able to develop so rapidly in such a short period is that benchmark datasets were well-developed. For example, ImageNet \cite{imagenet} for image processing and benchmark tasks like GLUE \cite{wang2018glue} that measure general-purpose language capability for NLP has greatly contributed to the research community. Prior research does point out that the dataset and the way to present it matter for learning analogies as well \cite{hill2018learning}. Several data and tasks for measuring general analogical reasoning capability have been proposed \cite{wang2015automatic,zhang2019raven,hu2021stratified,chollet2019measure}. However, little research has proposed those specific to science to our best knowledge. Therefore, the machine learning research community needs to move forward with appropriate problem setting, data set creation, and benchmarking tasks for science-specific analogy reasoning.
+
+A promising first step in this direction is an approach that uses research paper data to learn analogical relations \cite{kang2022augmenting,chan2018solvent}. This is because there are tons of research paper data and language models have developed rapidly in recent years. For example, one previous study considers a single paper as a pair of ``problem'' and ``solution'' and proposes a search engine for scientific papers using analogies between them \cite{chan2018solvent,kang2022augmenting}. Specifically, they train a learner that classifies the abstract sentences of a given paper into ``problem,'' ``mechanism,'' and ``the other'' (e.g., ``background'' or ``discovery''), and then train an encoder such that the more similar the embedding vectors of the ``problem'' and ``mechanism'' sentences are, the closer they are. This learning allows us to find scientific papers with the same ``problem'' but different ``mechanisms''. Although we need to design more abstract and general tasks for more general intelligence, it would be good to first design research-specific analogy tasks in this direction.
+
+For data-driven research automation, it would be desirable in the long run that all data from the research process, including each research task and its intermediate products, will be recorded in a structured manner on the web. In current machine learning research, researchers publish research results as a repository, but what researchers consider in the research process does not remain as data. Therefore, no data to generate a hypothesis remains, making it hard to learn data-driven hypothesis generation patterns using these data. More to the point, researchers hesitate to release rejected research hypotheses during pre-study. In other words, less negative data remains, making hypothesis data imbalanced. Other fields, such as psychology, started to store information about the research process on the web with the tool Open Science Framework (OSF)\cite{foster2017open}. Machine learning may also benefit from using such a tool to store the research process first. Or, since machine learning research goes up to the GitHub repository in the first place, it might be a good idea to save other research processes directly on the GitHub repository as well. In any case, the machine learning research community needs to work to establish a culture in which researchers make the research process public.
+
+\subsection{Goal-conditioned Planning}
+
+Another research direction that will advance pre-exploration automation would be to realize neural networks with the ability to develop a strategy given a goal. Given a long-term goal, humans consider steps, or sub-goals, to reach the goal from the current point. The problem to tackle in a study is the sub-goal closest to the current point in this chain of sub-goals. This repeated application of plausible inference leads to problem discovery and hypothesis generation.
+
+Determining strategies under a given goal has been studied in reinforcement learning (RL) \cite{kaelbling1993learning,schaul2015universal,liu2022goal}. However, determining the problem in research involves a large gap between the goal and the actual problem to be addressed, and hence the reasoning that connects the two involves a great deal of uncertainty. Therefore, whether explicitly expressed or not, the agent must divide the goal into a series of sub-goals and connect them with inferences between them. The RL researchers have long studied this generation of sub-goals and the \textit{temporal abstraction} for it \cite{sutton1999between,precup2000temporal,dayan1992feudal,schmidhuber1991neural,vezhnevets2017feudal}. While there are studies that generate sub-goals under which goals are explicitly given \cite{chane2021goal}, to the best of our knowledge, there is no study yet of applying them to reasoning as is done in more abstract studies. Reinforcement learning tasks require fine control, but the reasoning in science involves more logical reasoning. The application of reinforcement learning to automated theorem proving has increased in recent years \cite{szegedy2020promising}, and the insights gained in this research domain may be useful in the future for learning logical reasoning in the scientific domain as well. In any case, it would be necessary to design a task more specific to scientific reasoning.
+
+In addition, the determination of the problem that a study address critically influences the value of the study. No matter how great a hypothesis you can come up with, if the problem to be addressed is of little significance, it would not be a very influential study. However, it is difficult to evaluate how important each sub-goals is in realizing a goal. Therefore, learning the importance of the scientific problems from data by using machine learning is necessary. It may be useful to use the findings of studies that evaluate the impact of research from data \cite{wang2021} and especially from scientific papers \cite{savov2020identifying}. As in the previous section, data development is essential for this as well.
+
+\subsection{Language Understanding}
+The ability to manipulate language is one of the key elements that distinguish humans from other animals. In particular, language is essential to automate scientific discovery because the language allows for systematic reasoning, inference about things you did not experience, and many research findings are in language. Therefore, anything that arises in the process of reasoning, such as hypotheses generation and problem decision we mentioned above, would be best done in language whenever possible.
+
+While machine learning in NLP has made great strides in recent years, there are still several challenges to be resolved. One of the essentials, especially as it relates to science, is the ability to map linguistic understanding with the understanding of nature. This is because symbolic manipulation in an abstract language alone does not necessarily mean understanding nature. Therefore, we should put more resource on the research of \textit{grounded language learning}, which maps language to the real world \cite{ruis2020benchmark,chevalier2018babyai,colas2022autotelic,lake2021word,mcclelland2020placing}. The fact that multimodal learning of images and language has led to deeper language understanding in recent years also shows the importance of incorporating information from modalities other than language \cite{ramesh2022hierarchical,saharia2022photorealistic}. Slightly off-topic, but research aimed at acquiring a physical \textit{common sense} is also an important area related to the realization of intelligence capable of understanding language related to science in the same sense \cite{sap2020commonsense}.
+
+Another essential research direction related to language understanding for science is the acquisition of \textit{systematic generalization} abilities. Human intelligence can systematically generalize from experience to unseen events, which is a key for language manipulation. Systematicity alone is indispensable for science since it is key to acquiring analogies, strategy formulation, and the discovery and application of natural laws. 
+
+Neural networks are known to be poor at this systematic generalization \cite{fodor1988connectionism}. However, several studies have been conducted in recent years for neural networks to achieve systematic generalization \cite{guo2020hierarchical,guo2021revisiting,gai-etal-2021-grounded-graph,herzig2021unlocking,das-etal-2021-case,zheng-lapata-2022-disentangled,furrer2020compositional,ontanon-etal-2022-making,csordas-etal-2021-devil,liu-etal-2021-learning-algebraic}. While simple models can do so on simple datasets \cite{ontanon-etal-2022-making,csordas-etal-2021-devil}, task-specific heuristics still needs for complex data sets \cite{liu-etal-2021-learning-algebraic}. Therefore, we should consider a way to achieve a systematic generalization capability without installing many heuristics.
+
+\section{Discussion}
+In this paper, we discussed some important factors for the goal of automating science regardless of a specific domain, especially those that may be important in the process leading up to the generation of candidate hypotheses. In particular, we raised the importance of analogy, goal-conditioned strategy formulation, and language understanding for the automation of science.
+
+As we explained in Section \ref{section:analogy}, developing the data and task for the scientific research process would be a key driver for advancing scientific discovery automation. It is also important to re-examine the nature of science and to understand what scientific discovery, problem decision, and hypothesis generation are in the first place. For this purpose, we should promote automation of scientific discovery in both specific science domains and the general scientific process. Keeping discussion across research areas on what is needed for the automation/optimization of science would be worthwhile.
+
+\bibliographystyle{unsrt}
+\bibliography{ref}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
